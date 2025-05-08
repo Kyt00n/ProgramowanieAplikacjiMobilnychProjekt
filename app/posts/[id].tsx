@@ -1,9 +1,8 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import { ScrollView, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { useLocalSearchParams } from 'expo-router'
 import { Image, ScrollView as HorizontalScrollView } from 'react-native'
 import { getPostById, getUserById } from '@/services/api'
-import useFetch from '@/services/useFetch'
 
 const PostDetails = () => {
     const { id } = useLocalSearchParams()

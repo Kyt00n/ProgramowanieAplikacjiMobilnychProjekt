@@ -1,5 +1,4 @@
 import SearchBar from "@/components/searchBar";
-import { Link } from "expo-router";
 import { ActivityIndicator, FlatList, ScrollView, Text, View } from "react-native";
 import { useRouter } from "expo-router";
 import useFetch from "@/services/useFetch";
@@ -20,6 +19,7 @@ export default function Index() {
       showsVerticalScrollIndicator={false} 
       contentContainerStyle={{minHeight: "100%", paddingBottom: 10}}>
         <Text className="w-12 h-10 mt-20 mb-5 mx-auto text-center text-4xl">📚</Text>
+        <Text className="mx-auto text-center text-4xl text-white font-bold">All Posts</Text>
 
         {postsLoading ? (
           <ActivityIndicator size="large" color="#0000ff" className="mt-10 self-center" />
@@ -30,7 +30,7 @@ export default function Index() {
         <View className="flex-1 mt-5">
           <SearchBar
           onPress={() => router.push("/search")}
-          placeholder="Search for a movie"
+          placeholder="Search for a post..."
           value=""
           onChangeText={() => {}}
           />

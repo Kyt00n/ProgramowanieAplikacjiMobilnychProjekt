@@ -2,7 +2,6 @@ import PostCard from '@/components/postCard'
 import SearchBar from '@/components/searchBar';
 import { getPosts } from '@/services/api';
 import useFetch from '@/services/useFetch';
-import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { View, Text, Image, FlatList, ActivityIndicator } from 'react-native'
 
@@ -38,7 +37,7 @@ const Search = () => {
       contentContainerStyle={{paddingBottom:100}} 
       ListHeaderComponent={
         <>
-        <View className='w-full flex-row justify-center mt-20 items-center'>
+        <View className='w-full justify-center mt-20 items-center'>
             <Text className='text-4xl'>🔍</Text>
             <Text className='text-4xl text-white font-bold ml-2'>Search</Text>
         </View>

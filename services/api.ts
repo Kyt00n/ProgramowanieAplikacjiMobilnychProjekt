@@ -80,4 +80,23 @@ export const getPhotosByPost = async ({postId, photoId}: {postId:number, photoId
     const data = await response.json()
     return data
 }
+export const getSavedPosts = async ({userId}: {userId: string}) => {
+    const endpoint = `${JsonPlaceholderAPI.BASE_URL}/users/${userId}/posts`
+
+    const response = await fetch(endpoint, {
+        method: 'GET',
+        headers: JsonPlaceholderAPI.headers,
+    })
+    if (!response.ok) {
+        throw new Error('Network response was not ok')
+    }
+    const posts = await response.json()
+    const postsWithThumbnails = posts.map((post: any) => {
+        const thumbnailUrl = `https://picsum.photos/id/${post.id}/200/300`;
+        return { ...post, thumbnailUrl };
+    });
+    
+
+    return postsWithThumbnails;
+}
 
