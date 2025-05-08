@@ -4,4 +4,5 @@ export interface Post {
     title: string;
     body: string;
     thumbnailUrl?: string;
+    photos?: string[];
 }
